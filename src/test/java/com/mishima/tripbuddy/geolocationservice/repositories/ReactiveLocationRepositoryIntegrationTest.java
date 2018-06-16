@@ -37,9 +37,9 @@ public class ReactiveLocationRepositoryIntegrationTest {
                 .then().block();
 
         repository.saveAll(Flux.just(
-                Geolocation.builder().username("test").latitude(38d).longitude(-79d).accuracy(0d).altitude(10d).altitudeAccuracy(0d).heading(180d).speed(3d).timestamp(1).build(),
-                Geolocation.builder().username("test").latitude(39d).longitude(-79d).accuracy(0d).altitude(10d).altitudeAccuracy(0d).heading(180d).speed(3d).timestamp(2).build(),
-                Geolocation.builder().username("test").latitude(40d).longitude(-79d).accuracy(0d).altitude(10d).altitudeAccuracy(0d).heading(180d).speed(3d).timestamp(3).build(),
+                Geolocation.builder().username("test").latitude(38d).longitude(-79d).accuracy(0d).altitude(10d).altitudeAccuracy(0d).heading(180d).speed(3d).timestamp(4).build(),
+                Geolocation.builder().username("test").latitude(39d).longitude(-79d).accuracy(0d).altitude(10d).altitudeAccuracy(0d).heading(180d).speed(3d).timestamp(5).build(),
+                Geolocation.builder().username("test").latitude(40d).longitude(-79d).accuracy(0d).altitude(10d).altitudeAccuracy(0d).heading(180d).speed(3d).timestamp(6).build(),
                 Geolocation.builder().build())).then().block();
     }
 
