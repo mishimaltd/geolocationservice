@@ -1,20 +1,24 @@
 package com.mishima.tripbuddy.geolocationservice.entity;
 
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
+@Setter
 @Document
 @ToString
+@EqualsAndHashCode
 @CompoundIndex(def = "{'username':1, 'timestamp':-1}", name = "username_timestamp")
 public class Geolocation {
 
     @Id
-    private ObjectId _id;
+    private String _id;
     private String username;
     private double latitude;
     private double longitude;
@@ -24,6 +28,9 @@ public class Geolocation {
     private double heading;
     private double speed;
     private long timestamp;
+
+    private Geolocation() {
+    }
 
     public Geolocation(String username, double latitude, double longitude, double accuracy, double altitude, double altitudeAccuracy, double heading, double speed, long timestamp) {
         this.username = username;
@@ -105,4 +112,5 @@ public class Geolocation {
             return new Geolocation(username, latitude, longitude, accuracy, altitude, altitudeAccuracy, heading, speed, timestamp);
         }
     }
+
 }
