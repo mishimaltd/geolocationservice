@@ -17,7 +17,7 @@ public class GeolocationServiceRouter {
     public RouterFunction<ServerResponse> route(GeolocationHandler handler) {
         return RouterFunctions.route(GET("/geolocations/{username}/latest").and(accept(APPLICATION_JSON)), handler::getLatestByUserName)
                 .and(RouterFunctions.route(GET("/geolocations/{username}").and(accept(APPLICATION_JSON)), handler::getByUsername))
-                .and(RouterFunctions.route(PUT("/geolocations").and(accept(APPLICATION_JSON)).and(contentType(APPLICATION_JSON)), handler::save))
-                .and(RouterFunctions.route(DELETE("/geolocations/{id}").and(accept(APPLICATION_JSON)), handler::delete));
+                .and(RouterFunctions.route(PUT("/geolocations").and(contentType(APPLICATION_JSON)), handler::save))
+                .and(RouterFunctions.route(DELETE("/geolocations/{id}"), handler::delete));
     }
 }
