@@ -61,6 +61,4 @@ public class ReactiveLocationRepositoryIntegrationTest {
         assertNull(repository.findFirstByUsernameOrderByTimestampDesc("invalid").switchIfEmpty(Mono.empty()).block());
     }
 
-
-
 }

@@ -18,7 +18,7 @@ import static org.springframework.web.reactive.function.BodyInserters.fromPublis
 
 @Component
 @Slf4j
-public class GeolocationHandler {
+public class GeolocationServiceHandler {
 
     @Autowired
     private ReactiveGeolocationRepository repository;

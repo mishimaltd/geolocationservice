@@ -14,7 +14,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 public class GeolocationServiceRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> route(GeolocationHandler handler) {
+    public RouterFunction<ServerResponse> route(GeolocationServiceHandler handler) {
         return RouterFunctions.route(GET("/geolocations/{username}/latest").and(accept(APPLICATION_JSON)), handler::getLatestByUserName)
                 .and(RouterFunctions.route(GET("/geolocations/{username}").and(accept(APPLICATION_JSON)), handler::getByUsername))
                 .and(RouterFunctions.route(PUT("/geolocations").and(contentType(APPLICATION_JSON)), handler::save))

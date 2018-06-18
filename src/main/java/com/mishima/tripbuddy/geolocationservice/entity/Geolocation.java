@@ -1,6 +1,5 @@
 package com.mishima.tripbuddy.geolocationservice.entity;
 
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
